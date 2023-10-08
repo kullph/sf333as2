@@ -23,7 +23,7 @@ class GameViewModel : ViewModel() {
     )
 
     private fun computerPlay() {
-        // ลองวางชิ้นหมายในช่องที่ชนะได้
+
         for (i in 1..9) {
             if (boardItems[i] == BoardCellValue.NONE) {
                 boardItems[i] = BoardCellValue.CROSS
@@ -40,7 +40,7 @@ class GameViewModel : ViewModel() {
             }
         }
 
-        // ลองบล็อกช่องที่ผู้เล่น O สามารถชนะได้
+
         for (i in 1..9) {
             if (boardItems[i] == BoardCellValue.NONE) {
                 boardItems[i] = BoardCellValue.CIRCLE
@@ -55,7 +55,7 @@ class GameViewModel : ViewModel() {
             }
         }
 
-        // วางในช่องกลางหากว่าง
+
         if (boardItems[5] == BoardCellValue.NONE) {
             boardItems[5] = BoardCellValue.CROSS
 
@@ -64,7 +64,7 @@ class GameViewModel : ViewModel() {
                 currentTurn = BoardCellValue.CIRCLE
             )
         } else {
-            // สุ่มวางในช่องที่ว่าง
+
             val emptyCells = boardItems.filterValues { it == BoardCellValue.NONE }.keys.toList()
             if (emptyCells.isNotEmpty()) {
                 val randomCell = emptyCells[Random.nextInt(emptyCells.size)]
