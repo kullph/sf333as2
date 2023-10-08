@@ -47,7 +47,6 @@ class GameViewModel : ViewModel() {
                 if (checkForVictory(BoardCellValue.CIRCLE)) {
                     boardItems[i] = BoardCellValue.CROSS
                     state = state.copy(
-                        hintText = "Computer turn",
                         currentTurn = BoardCellValue.CIRCLE
                     )
                     return
@@ -129,7 +128,6 @@ class GameViewModel : ViewModel() {
                 )
             } else {
                 state.copy(
-                    hintText = "Computer turn",
                     currentTurn = BoardCellValue.CROSS
                 )
             }
